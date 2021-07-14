@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::resource('fumetti', 'FumettoController');
+Route::resource('fumetti', FumettoController::class);

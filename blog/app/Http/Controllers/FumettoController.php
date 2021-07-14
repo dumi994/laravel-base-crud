@@ -25,7 +25,7 @@ class FumettoController extends Controller
      */
     public function create()
     {
-        //
+        return view('fumetti.create');
     }
 
     /**
@@ -36,7 +36,14 @@ class FumettoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $fumetto = new Fumetto();
+        $fumetto->title = $request->title;
+        $fumetto->desc = $request->desc;
+        $fumetto->poster = $request->poster;
+        $fumetto->price = $request->price;
+        
+        $fumetto->save();
+        return redirect()->route('fumetti.show', $fumetto->id);
     }
 
     /**
@@ -47,7 +54,7 @@ class FumettoController extends Controller
      */
     public function show(Fumetto $fumetto)
     {
-        //
+        return view('fumetti.show', compact('fumetto'));   //
     }
 
     /**
