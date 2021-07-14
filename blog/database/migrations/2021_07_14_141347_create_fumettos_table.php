@@ -18,7 +18,7 @@ class CreateFumettosTable extends Migration
             $table->string('title');
             $table->text('desc');
             $table->text('poster');
-            $table->int('price');
+            $table->integer('price');
             $table->timestamps();
         });
     }
