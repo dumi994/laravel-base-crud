@@ -64,8 +64,6 @@
         </style>
     </head>
     <body>
-        @foreach($comics as $comic)
-            <h1>{{$comic->title}}</h1>
-        @endforeach
+            <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam praesentium asperiores iste itaque beatae nisi quos officia, voluptas consectetur laborum ex deserunt velit veritatis eligendi eaque, numquam vel rerum maxime?</h1>
     </body>
 </html>

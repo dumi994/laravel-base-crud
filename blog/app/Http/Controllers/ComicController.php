@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Fumetto;
+use App\Comic;
 use Illuminate\Http\Request;
 
-class FumettoController extends Controller
+class ComicController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,9 @@ class FumettoController extends Controller
      */
     public function index()
     {
-       $fumetti = Fumetto::all();
-       return view('home', compact('fumetti'));
+       $comics = Comic::all();
+       dd($comics);
+       return view('comics.index', compact('comics'));
     }
 
     /**
@@ -25,7 +26,7 @@ class FumettoController extends Controller
      */
     public function create()
     {
-        return view('fumetti.create');
+        //
     }
 
     /**
@@ -36,34 +37,27 @@ class FumettoController extends Controller
      */
     public function store(Request $request)
     {
-        $fumetto = new Fumetto();
-        $fumetto->title = $request->title;
-        $fumetto->desc = $request->desc;
-        $fumetto->poster = $request->poster;
-        $fumetto->price = $request->price;
-        
-        $fumetto->save();
-        return redirect()->route('fumetti.show', $fumetto->id);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Fumetto  $fumetto
+     * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function show(Fumetto $fumetto)
+    public function show(Comic $comic)
     {
-        return view('fumetti.show', compact('fumetto'));   //
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Fumetto  $fumetto
+     * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fumetto $fumetto)
+    public function edit(Comic $comic)
     {
         //
     }
@@ -72,10 +66,10 @@ class FumettoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Fumetto  $fumetto
+     * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Fumetto $fumetto)
+    public function update(Request $request, Comic $comic)
     {
         //
     }
@@ -83,10 +77,10 @@ class FumettoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Fumetto  $fumetto
+     * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fumetto $fumetto)
+    public function destroy(Comic $comic)
     {
         //
     }

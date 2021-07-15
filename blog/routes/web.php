@@ -13,8 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::resource('fumetti', FumettoController::class);
+Route::resource('comics', ComicController::class);
